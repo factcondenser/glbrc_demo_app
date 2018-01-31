@@ -1,24 +1,62 @@
-<div class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
+<a id="menu-toggle" href="#" class="btn btn-lg toggle">
+  <i class="glyphicon glyphicon-plus"></i>
+</a>
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle toggle-override">
+      <i class="glyphicon glyphicon-remove"></i>
+    </a>
+    <li class="sidebar-brand">
+      <a href="https://markcuipan.com/">Mark Cui Pan</a>
+    </li>
+    <li>
+      <a href="./#top">Home</a>
+    </li>
+    <li>
+      <a href="./#intro">Intro</a>
+    </li>
+    <li>
+      <a href="./#work-header">Work</a>
+    </li>
+    <li>
+      <a href="./#projects-header">Projects</a>
+    </li>
+    <li>
+      <a href="./#about-header">About</a>
+    </li>
+    <li>
+      <a href="./#resume-header">Resume</a>
+    </li>
+    <hr>
+    <li>
+      <a class="sidebar-special" href="https://markcuipan.com/blog/">Blog</a>
+    </li>
+    <li>
+      <a class="sidebar-special" href="https://markcuipan.com/autonomy/">Autonomy</a>
+    </li>
+    <li>
+      <a class="sidebar-special" href="https://markcuipan.com/tutor/">Tutor</a>
+    </li>
+  </ul>
 </div>
 <div class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
 </div>
 <div class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
 </div>
+
+<script type='text/javascript'>
+  $("#menu-close").click(function (e) {
+    e.preventDefault(),
+    $("#sidebar-wrapper").toggleClass("active")
+  }),
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault(),
+    $("#sidebar-wrapper").toggleClass("active")
+  });
+</script>

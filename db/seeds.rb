@@ -14,3 +14,7 @@ Application.create([
   { name: 'WEI', description: 'Wisconsin Energy Institute', color: 'Green', default_status: 'No', link: 'https://energy.wisc.edu/' },
   { name: 'Twitter', description: 'Twitter', color: 'Purple', default_status: 'No', link: 'https://twitter.com/' }
 ])
+
+User.all.each do |user|
+  user.applications = Application.where(default_status: "Yes")
+end

@@ -14,4 +14,5 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require sortablejs/Sortable.min.js
 //= require_tree .

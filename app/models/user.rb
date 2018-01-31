@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :links
+  has_many :applications, through: :links
+
   attr_accessor	:remember_token
   # Class methods (idiomatically correct, if confusing)
 	class << self
