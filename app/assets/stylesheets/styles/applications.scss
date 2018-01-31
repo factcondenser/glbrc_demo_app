@@ -1,3 +1,37 @@
 // Place all the styles related to the Applications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.appTile {
+  background-color: white;
+  border: solid 2px $primary-dark;
+  min-height: 20em;
+  padding-top: 2em;
+  -webkit-box-shadow: 5px 5px 5px #777;
+	-moz-box-shadow: 5px 5px 5px #777;
+	box-shadow: 5px 5px 5px #777;
+}
+.appTile a i {
+  text-shadow: 5px 5px 5px #ccc;
+  font-size: 10em;
+  &:hover {
+    text-shadow: 1px 1px 1px #ccc,
+  }
+}
+
+.appTile .x {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  top: .1em;
+  right: .7em;
+  font-size: 2.5em;
+}
+
+.appTile button {
+  background: transparent;
+  border: none;
+  color: $primary;
+  &:hover {
+    color: $primary-dark;
+  }
+}

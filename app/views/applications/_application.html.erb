@@ -1,0 +1,10 @@
+<div class="col-md-3">
+  <div class="appTile text-center" id="app-<%= application.id %>">
+    <div class="centered-child">
+      <a href="<%= application.link %>" target="_blank"><%= fa_icon icons[application.name], style: "color: #{application.color}"%></a>
+      <h3><%= application.name %></h3>
+      <p class="lead"><%= application.description %></p>
+    </div>
+    <%= render 'links/remove_app_from_home', app_id: application.id %>
+  </div>
+</div>
