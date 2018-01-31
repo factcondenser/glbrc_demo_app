@@ -1,7 +1,13 @@
 {
   "name": "glbrc_demo_app",
+  "description": "glbrc demo app",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "sortablejs": "^1.7.0"
+    "sortablejs": "1.7.0"
+  },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
   }
 }
