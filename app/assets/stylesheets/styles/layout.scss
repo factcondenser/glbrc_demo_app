@@ -27,10 +27,9 @@ textarea {
 /* header */
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2.5em;
   letter-spacing: -1px;
-  padding-top: 9px;
+  line-height: 1;
   font-weight: bold;
 }
 
@@ -71,12 +70,10 @@ $dropDown: true;
   .navbar-nav {
     > li {
       height: 65px;
-      border: 3px solid $bgDefault;
 
       &:focus,
       &:hover {
-        border: 3px solid $colHighlight;
-
+        background-color: $bgHighlight;
         > a {
           color: $colHighlight;
         }
@@ -86,7 +83,7 @@ $dropDown: true;
         color: $colDefault;
         font-size: 2em;
         font-weight: bold;
-        margin-top: 4px;
+        line-height: 1.2;
       }
       @if $dropDown {
         > .dropdown-menu {
