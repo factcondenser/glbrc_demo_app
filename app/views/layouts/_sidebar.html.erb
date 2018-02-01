@@ -1,0 +1,13 @@
+<a id="menu-toggle" href="#" class="btn btn-lg toggle">
+  <span>
+    <i class="glyphicon glyphicon-plus"></i>
+    Add more to home</span>
+</a>
+<div id="sidebar-wrapper">
+  <a id="menu-close" href="#" class="btn btn-default btn-lg toggle">
+    <i class="glyphicon glyphicon-remove"></i>
+  </a>
+  <ol class="sidebar-apps">
+    <%= render Application.all, icons: icons_hash, sidebar: true %>
+  </ol>
+</div>

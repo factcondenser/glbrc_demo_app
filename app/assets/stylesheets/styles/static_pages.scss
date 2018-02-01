@@ -2,4 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* logged_in_home */
+/* not_logged_in_home */
+.jumbotron {
+  margin-top: 5em;
+  background-color: white;
+  min-height: 20em;
+  -webkit-box-shadow: 5px 5px 5px #777;
+	-moz-box-shadow: 5px 5px 5px #777;
+	box-shadow: 5px 5px 5px #777;
+}

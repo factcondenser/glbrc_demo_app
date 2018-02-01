@@ -25,6 +25,7 @@ textarea {
 .container {
 	margin: 0 auto;
 	width: 100%;
+  min-height: 42em;
 }
 
 /* header */
@@ -56,24 +57,20 @@ $dropDown: true;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
-
   .navbar-brand {
     color: $colDefault;
-
     &:focus,
     &:hover {
       color: $colDefault;
     }
   }
-
   .navbar-text {
     color: $colDefault;
   }
-
   .navbar-nav {
+    margin-right: .01em;
     > li {
       height: $navbar-height;
-
       &:focus,
       &:hover {
         background-color: $bgHighlight;
@@ -81,7 +78,6 @@ $dropDown: true;
           color: $colHighlight;
         }
       }
-
       > a {
         color: $colDefault;
         font-size: 2em;
@@ -91,20 +87,17 @@ $dropDown: true;
       @if $dropDown {
         > .dropdown-menu {
           background-color: $bgDefault;
-
           > li {
             > a {
               color: $colDefault;
               font-weight: bold;
               font-size: 1.4em;
-
               &:focus,
               &:hover {
                 color: $colHighlight;
                 background-color: $bgDefault;
               }
             }
-
             &.divider {
               background-color: $bgHighlight;
             }
@@ -124,10 +117,8 @@ $dropDown: true;
         }
       }
     }
-
     > .active {
       border: 3px solid $colHighlight;
-
       > a,
        > a:hover,
       > a:focus {
@@ -135,10 +126,8 @@ $dropDown: true;
         background-color: $bgDefault;
       }
     }
-
     > .open {
       border: 3px solid $colHighlight;
-
       > a,
        > a:hover,
       > a:focus {
@@ -147,28 +136,22 @@ $dropDown: true;
       }
     }
   }
-
   .navbar-toggle {
     border-color: $bgHighlight;
-
     &:focus,
     &:hover {
       background-color: $bgHighlight;
     }
-
     .icon-bar {
       background-color: $colDefault;
     }
   }
-
   .navbar-collapse,
   .navbar-form {
     border-color: $colDefault;
   }
-
   .navbar-link {
     color: $colDefault;
-
     &:hover {
       color: $colHighlight;
     }
@@ -201,8 +184,7 @@ $dropDown: true;
   margin-right: -250px;
   right: 0;
   width: 250px;
-  background: $primary;
-  opacity: .25;
+  background: rgba(197, 5, 12, 0.25);
   position: fixed;
   height: 100%;
   overflow-y: auto;
@@ -214,63 +196,33 @@ $dropDown: true;
   transition: all .4s ease 0
 }
 
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
+.sidebar-apps {
   list-style: none;
   margin: 0;
-  padding: 0
+  padding-top: 4em;
+  padding-left: 2em;
 }
 
-hr {
-   border-color: #ddd;
-}
-
-.sidebar-nav hr {
-  border-color: #aaa;
-  margin-left: 5%;
-  width: 45%;
-}
-
-.sidebar-nav li {
+.sidebar-apps li {
+  font-size: 2em;
   line-height: 40px;
-  text-indent: 20px
-}
-
-.sidebar-nav li a {
-  color: #999;
+  text-indent: 20px;
+  color: $text-light;
   display: block;
-  text-decoration: none
+  text-decoration: none;
 }
 
-.sidebar-nav li a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-  text-decoration: none
-}
-
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
-  text-decoration: none
-}
-
-.sidebar-nav>.sidebar-brand {
-  height: 55px;
-  line-height: 55px;
-  font-size: 18px
-}
-
-.sidebar-nav>.sidebar-brand a {
-  color: #999
-}
-
-.sidebar-nav>.sidebar-brand a:hover {
-  color: #fff;
-  background: 0
-}
-
-.sidebar-special {
-  font-size: 20px
+.sidebar-apps button {
+  background: transparent;
+  border: none;
+  color: $primary;
+  display: inline;
+  &:hover {
+    color: $primary-dark;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 #menu-toggle {
@@ -278,19 +230,36 @@ hr {
   right: 0;
   position: fixed;
   z-index: 1;
-  color: #fff;
+  color: $text-light;
+  font-weight: bold;
+  font-size: 1.4em;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   -webkit-transition: all .3s ease 0;
   -moz-transition: all .3s ease 0;
   -ms-transition: all .3s ease 0;
   -o-transition: all .3s ease 0;
-  transition: all .3s ease 0
+  transition: all .3s ease 0;
+  &:hover {
+    color: $primary;
+  }
 }
 
-#menu-toggle:hover {
-  border: 1px solid #999;
-  background-color: rgba(0, 0, 0, 0.1)
+#menu-close {
+  position: absolute;
+  top: .3em;
+  right: .1em;
+  z-index: 1001;
+  display: block;
+
+  color: $bg-dark;
+  background: rgba(197, 5, 12, 0);
+  border-radius: 10px;
+  border-color: $bg-dark;
+  &:hover {
+    color: $primary;
+    border-color:$primary;
+  }
 }
 
 #sidebar-wrapper.active {
@@ -305,18 +274,6 @@ hr {
 
 .toggle {
   margin: 5px 5px 0 0
-}
-
-.toggle-override {
-  color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  background-color: #222;
-  border-color: rgba(255, 255, 255, 0.4)
-}
-
-.toggle-override:hover {
-  color: #fff;
-  background-color: #333
 }
 
 /* footer */

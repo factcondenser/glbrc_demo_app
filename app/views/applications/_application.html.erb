@@ -1,4 +1,9 @@
-<div class="col-md-3">
+<% if local_assigns[:sidebar] %>
+  <% if current_user.applications.count == 0 || application.users.where(id: current_user.id).empty? %>
+    <li><%= render 'links/add_app_to_home', app_id: application.id, app_name: application.name, icon: icons[application.name] %></li>
+  <% end %>
+<% else %>
+<div class="col-md-4">
   <div class="appTile text-center" id="app-<%= application.id %>">
     <div class="centered-child">
       <a href="<%= application.link %>" target="_blank"><%= fa_icon icons[application.name], style: "color: #{application.color}"%></a>
@@ -8,3 +13,4 @@
     <%= render 'links/remove_app_from_home', app_id: application.id %>
   </div>
 </div>
+<%  end %>

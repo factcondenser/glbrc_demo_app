@@ -16,3 +16,13 @@ $text-foot:     $uw-gray-footer-text;
 $text-foot-hov: $uw-gray-footer-text-hover;
 $bg-light:      $uw-page-bg;
 $bg-dark:       $uw-gray-blue;
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary-dark;
+  color: $text-light;
+  &:hover {
+    background-color: $primary-dark;
+    border-color: $primary;
+  }
+}

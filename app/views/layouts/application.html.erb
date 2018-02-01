@@ -1,82 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"> </script> <![endif]-->
-  </head>
+  <%= render 'layouts/head' %>
   <body>
-    <header class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <nav>
-          <%= link_to "GLBRC Demo App", '/', class: "navbar-brand", id: "logo" %>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
-            <% if logged_in? %>
-              <li><%= link_to "Log out", logout_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Log in", login_path %></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- Sidebar -->
-    <a id="menu-toggle" href="#" class="btn btn-lg toggle">
-      <i class="glyphicon glyphicon-plus"></i>
-    </a>
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle toggle-override">
-          <i class="glyphicon glyphicon-remove"></i>
-        </a>
-        <li class="sidebar-brand">
-          <a href="https://markcuipan.com/">Mark Cui Pan</a>
-        </li>
-        <li>
-          <a href="./#top">Home</a>
-        </li>
-        <li>
-          <a href="./#intro">Intro</a>
-        </li>
-        <li>
-          <a href="./#work-header">Work</a>
-        </li>
-        <li>
-          <a href="./#projects-header">Projects</a>
-        </li>
-        <li>
-          <a href="./#about-header">About</a>
-        </li>
-        <li>
-          <a href="./#resume-header">Resume</a>
-        </li>
-        <hr>
-        <li>
-          <a class="sidebar-special" href="https://markcuipan.com/blog/">Blog</a>
-        </li>
-        <li>
-          <a class="sidebar-special" href="https://markcuipan.com/autonomy/">Autonomy</a>
-        </li>
-        <li>
-          <a class="sidebar-special" href="https://markcuipan.com/tutor/">Tutor</a>
-        </li>
-      </ul>
-    </div>
+    <%= render 'layouts/header' %>
+    <% if logged_in? %>
+      <%= render 'layouts/sidebar' %>
+    <% end %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
       <%= yield %>
     </div>
-    <footer></footer>
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
     <script>
       $("#menu-close").click(function (e) {
         e.preventDefault(),
         $("#sidebar-wrapper").toggleClass("active")
+        $("#menu-toggle").css("visibility", "visible");
       }),
       $("#menu-toggle").click(function (e) {
         e.preventDefault(),
         $("#sidebar-wrapper").toggleClass("active")
+        $(this).css("visibility", "hidden");
       });
     </script>
   </body>
