@@ -1,5 +1,5 @@
 <div class="x">
-<%= form_for(current_user.links.find_by(application_id: app_id), html: { method: :delete }) do |f| %>
+<%= form_for(current_user.links.find_by(params[:app_id]), html: { method: :delete }) do |f| %>
 <%= f.button fa_icon('times'), type: 'submit' %>
 <% end %>
 </div>

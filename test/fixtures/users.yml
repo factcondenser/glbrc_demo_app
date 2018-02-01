@@ -1,7 +1,14 @@
-one:
-  login: user1test
+alice:
+  id: 1
+  login: alice
   password: password
 
-two:
-  login: user2test
+bob:
+  id: 2
+  login: bob
+  password: password
+
+default:
+  id: 3
+  login: default
   password: password

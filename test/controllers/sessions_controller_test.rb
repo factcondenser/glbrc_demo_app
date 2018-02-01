@@ -6,4 +6,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should redirect to home" do
+    delete logout_path
+    assert_response :found
+  end
+
 end

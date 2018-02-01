@@ -31,4 +31,17 @@ class User < ApplicationRecord
 		BCrypt::Password.new(digest).is_password?(token)
 	end
 
+  def add_to_home(app_id)
+    self.applications << Application.find(app_id)
+  end
+
+  def remove_from_home(link_id)
+    self.links.destroy(link_id)
+  end
+
+  def has_on_home?(app_id)
+    app = Application.find(app_id)
+    self.applications.include?(app)
+  end
+
 end

@@ -1,5 +1,5 @@
 <% if local_assigns[:sidebar] %>
-  <% if current_user.applications.count == 0 || application.users.where(id: current_user.id).empty? %>
+  <% if !application.on_home_of?(current_user.id) %>
     <li><%= render 'links/add_app_to_home', app_id: application.id, app_name: application.name, icon: icons[application.name] %></li>
   <% end %>
 <% else %>
